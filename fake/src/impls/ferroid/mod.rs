@@ -1,8 +1,7 @@
 //! Fake _ferroid_ generation.
 
-use ferroid::{
-    define_ulid,
-    id::{SnowflakeDiscordId, SnowflakeInstagramId, SnowflakeMastodonId, SnowflakeTwitterId, ULID},
+use ferroid::id::{
+    SnowflakeDiscordId, SnowflakeInstagramId, SnowflakeMastodonId, SnowflakeTwitterId, ULID,
 };
 
 use crate::{Dummy, Faker};
