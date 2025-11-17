@@ -1,7 +1,7 @@
 //! Fake _ferroid_ generation.
 
 use ferroid::{
-    base32::{Base32SnowExt, Base32UlidExt},
+    define_ulid,
     id::{SnowflakeDiscordId, SnowflakeInstagramId, SnowflakeMastodonId, SnowflakeTwitterId, ULID},
 };
 
@@ -30,7 +30,7 @@ impl Dummy<FerroidULID> for ULID {
 }
 impl Dummy<FerroidULID> for String {
     fn dummy_with_rng<R: rand::Rng + ?Sized>(config: &FerroidULID, rng: &mut R) -> Self {
-        ULID::dummy_with_rng(config, rng).encode().to_string()
+        ULID::dummy_with_rng(config, rng).into()
     }
 }
 
@@ -53,9 +53,7 @@ impl Dummy<FerroidTwitterId> for SnowflakeTwitterId {
 }
 impl Dummy<FerroidTwitterId> for String {
     fn dummy_with_rng<R: rand::Rng + ?Sized>(config: &FerroidTwitterId, rng: &mut R) -> Self {
-        SnowflakeTwitterId::dummy_with_rng(config, rng)
-            .encode()
-            .to_string()
+        SnowflakeTwitterId::dummy_with_rng(config, rng).into()
     }
 }
 
@@ -78,9 +76,7 @@ impl Dummy<FerroidDiscordId> for SnowflakeDiscordId {
 }
 impl Dummy<FerroidDiscordId> for String {
     fn dummy_with_rng<R: rand::Rng + ?Sized>(config: &FerroidDiscordId, rng: &mut R) -> Self {
-        SnowflakeDiscordId::dummy_with_rng(config, rng)
-            .encode()
-            .to_string()
+        SnowflakeDiscordId::dummy_with_rng(config, rng).into()
     }
 }
 
@@ -103,9 +99,7 @@ impl Dummy<FerroidMastodonId> for SnowflakeMastodonId {
 }
 impl Dummy<FerroidMastodonId> for String {
     fn dummy_with_rng<R: rand::Rng + ?Sized>(config: &FerroidMastodonId, rng: &mut R) -> Self {
-        SnowflakeMastodonId::dummy_with_rng(config, rng)
-            .encode()
-            .to_string()
+        SnowflakeMastodonId::dummy_with_rng(config, rng).into()
     }
 }
 
@@ -128,8 +122,6 @@ impl Dummy<FerroidInstagramId> for SnowflakeInstagramId {
 }
 impl Dummy<FerroidInstagramId> for String {
     fn dummy_with_rng<R: rand::Rng + ?Sized>(config: &FerroidInstagramId, rng: &mut R) -> Self {
-        SnowflakeInstagramId::dummy_with_rng(config, rng)
-            .encode()
-            .to_string()
+        SnowflakeInstagramId::dummy_with_rng(config, rng).into()
     }
 }

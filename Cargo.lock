@@ -408,11 +408,12 @@ dependencies = [
 
 [[package]]
 name = "ferroid"
-version = "0.8.5"
+version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6b5e1043005e7ce8f3fbb712f71aa0aaba7895a77baf4407f307de3b1e131d8"
+checksum = "e0e9414a6ae93ef993ce40a1e02944f13d4508e2bf6f1ced1580ce6910f08253"
 dependencies = [
  "portable-atomic",
+ "web-time",
 ]
 
 [[package]]
